@@ -10,7 +10,7 @@ int main()
     int fDamage, wDamage, gDamage;
     string userChoice;
 
-    cout << "Welcome to Pallet Town, Professor Oak!" << endl;
+    cout << "Welcome to Pallet Town!" << endl;
 
     while (userChoice != "no")
     {
@@ -35,6 +35,16 @@ int main()
         cin >> p1.health;
     }
 
+    cout << "How much attack should trainer 1's Pokemon perform?" << endl;
+    cin >> p1.attack;
+
+    while (p1.attack <= 0)
+    {
+        cerr << "Error. Invalid input." << endl;
+        cout << "Please enter a positive value: ";
+        cin >> p1.attack;
+    }
+
     cout << "Excellent! Now what about trainer 2's type?" << endl;
     cin >> p2.type;
 
@@ -55,19 +65,18 @@ int main()
         cin >> p2.health;
     }
 
+    cout << "How much attack should trainer 2's Pokemon perform?" << endl;
+    cin >> p2.attack;
+
+    while (p2.attack <= 0)
+    {
+        cerr << "Error. Invalid input." << endl;
+        cout << "Please enter a positive value: ";
+        cin >> p2.attack;
+    }
+
     while ((p1.health > 0) && (p2.health > 0))
     {
-        cout << "Enter " << p1.type << " attack: ";
-        cin >> p1.attack;
-
-        // Pokemon attack must be positive
-        while (p1.attack <= 0)
-        {
-            cerr << "Error. Invalid input." << endl;
-            cout << "Please enter a positive value: ";
-            cin >> p1.attack;
-        }
-
         // Trainer 1 attacks while fire and grass verse each other in battle
         if ((p1.type == "fire" && p2.type == "grass") || (p1.type == "grass" && p2.type == "fire"))
         {
@@ -129,16 +138,6 @@ int main()
         if (p2.health <= 0)
         {
             break;
-        }
-
-        cout << "Enter " << p2.type << " attack: ";
-        cin >> p2.attack;
-
-        while (p2.attack <= 0)
-        {
-            cerr << "Error. Invalid input." << endl;
-            cout << "Please enter a positive value: ";
-            cin >> p2.attack;
         }
 
         // Trainer 2 attacks (fire vs grass)
