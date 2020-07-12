@@ -5,8 +5,8 @@ using namespace std;
 
 int main()
 {
-    Pokemon1 p1;
-    Pokemon2 p2;
+    Pokemon p1;
+    Pokemon p2;
     int fDamage, wDamage, gDamage;
     string userChoice;
 

@@ -3,15 +3,7 @@
 
 using namespace std;
 
-struct Pokemon1
-{
-    string type;
-    int health;
-    int attack;
-    int damage;
-};
-
-struct Pokemon2
+struct Pokemon
 {
     string type;
     int health;
