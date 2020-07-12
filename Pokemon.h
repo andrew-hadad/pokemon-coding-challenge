@@ -3,7 +3,7 @@
 
 using namespace std;
 
-struct trainer1
+struct Pokemon1
 {
     string type;
     int health;
@@ -11,7 +11,7 @@ struct trainer1
     int damage;
 };
 
-struct trainer2
+struct Pokemon2
 {
     string type;
     int health;
